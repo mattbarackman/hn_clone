@@ -1,23 +1,5 @@
-  <header>
-    <img id="header_image" src="/img/hackernews.gif">
-    <h3>Hacker News</h3>
-    <nav>
-      <dl>
-        <dd><a href='#'>new</a></dd>
-        <dd><a href='#'>comments</a></dd>
-        <dd><a href='#'>ask</a></dd>
-        <dd><a href='#'>jobs</a></dd>
-        <dd><a href='/submit'>submit</a></dd>
-      </dl>
-    </nav>
-    <div id="login"><a href="/login">login</a></div>
-  </header>
-
-<div class="container">
-
-  <p> user: <%= @user.username %> <p>
-  <p> created: <%= created_ago(@user.created_at) %> <p>
-  <p> email: <%= @user.email %> <p>
-  <p><a href="/users/<%= @user.id %>/posts">posts</a></p>
-  <p><a href="/users/<%= @user.id %>/comments">comments</a></p>  
-</div>
+<p> user: <%= @user.username %> <p>
+<p> created: <%= created_ago(@user.created_at) %> <p>
+<p> email: <%= @user.email %> <p>
+<p><a href="/users/<%= @user.id %>/posts">posts</a> <%="(#{user_post_votes(@user)} points)"%></p> 
+<p><a href="/users/<%= @user.id %>/comments">comments</a> <%="(#{user_comment_votes(@user)} points)"%></p>  

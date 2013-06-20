@@ -5,5 +5,4 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :url
   validates_presence_of :title
-  # Remember to create a migration!
 end

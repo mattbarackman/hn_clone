@@ -2,20 +2,14 @@ enable :sessions
 
 get '/' do
   @posts = Post.all
-  # has list of all recent posts
-  # has login button in upper right corner
-  # login redirects you to a 
-
   erb :index
 end
 
 get '/users/new' do
-  #sign up page
   erb :signup 
 end
 
 post '/users/new' do
-  p "*" * 100
   user = User.create(username: params[:username], password: params[:password])
   session[:user_id] = user.id
   redirect '/'

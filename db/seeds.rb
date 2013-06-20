@@ -22,7 +22,7 @@ posts.each do |post|
    users.each do |user|
     post.posts_votes << PostsVote.create(user_id: user.id, 
                                          post_id: post.id,
-                                         vote: 1)
+                                         vote: [-1,1,1,1].sample)
     post.save
   user.save
   end

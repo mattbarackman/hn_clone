@@ -1,32 +1,13 @@
-  <header>
-    <img id="header_image" src="/img/hackernews.gif">
-    <h3>Hacker News</h3>
-    <nav>
-      <dl>
-        <dd><a href='#'>new</a></dd>
-        <dd><a href='#'>comments</a></dd>
-        <dd><a href='#'>ask</a></dd>
-        <dd><a href='#'>jobs</a></dd>
-        <dd><a class="active" href='/submit'>submit</a></dd>
-      </dl>
-    </nav>
-    <div id="login"><a href="/login">login</a></div>
-  </header>
-
-
-<div class="container">
-  <% if @errors %>
-    <div class="errors">
-      <% @errors.each do |key, value| %> 
-        <p> <%= key %>: <%= value %> <p>
-      <% end %>
-    </div>
-  <% end %>
-
-    <form action="/submit" method="post">
-      <input type="text" placeholder="title" name="title"><br>
-      <input type="url" placeholder="url" name="url"><br>
-      <input type="submit" value="submit" name="submit">
-    </form>
-
+<% if @errors %>
+  <div class="errors">
+    <% @errors.each do |key, value| %> 
+      <p> <%= key %>: <%= value %> <p>
+    <% end %>
   </div>
+<% end %>
+
+<form class="submit" action="/submit" method="post">
+  <input type="text" placeholder="title" name="title"><br>
+  <input type="url" placeholder="url" name="url"><br>
+  <input type="submit" value="submit" name="submit">
+</form>

@@ -15,9 +15,26 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title>Hacker News</title>
+  <title>Hacker Brews</title>
 </head>
+<header>
+  <img id="header_image" src="/img/hackernews.gif">
+  <a href="/"><h3>Hacker Brews</h3></a>
+  <nav>
+    <dl>
+      <dd><a href='#'>new</a></dd>
+      <dd><a href='#'>comments</a></dd>
+      <dd><a href='#'>ask</a></dd>
+      <dd><a href='#'>jobs</a></dd>
+      <dd><a href='/submit'>submit</a></dd>
+    </dl>
+  </nav>
+  <div id="login"><a href="/users/new">signup</a></div>
+  <div id="login"><a href="/login">login</a></div>
+</header>
 <body>
-  <%= yield %>
+  <div class="container">
+    <%= yield %>
+  <div>
 </body>
 </html>
