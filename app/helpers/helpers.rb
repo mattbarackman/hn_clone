@@ -19,19 +19,8 @@ helpers do
     User.find(session[:user_id]) if session[:user_id] 
   end
 
-  def user_post_votes(user)
-    user.posts_votes.inject(0){|total, post_vote | total += post_vote.vote }
+  def username_with_points
+    "#{current_user.username} (#{current_user.total_karma})"
   end
 
-  def user_comment_votes(user)
-    user.comments_votes.inject(0){|total, comment_vote | total += comment_vote.vote }  
-  end
-
-  def post_votes(post)
-    post.posts_votes.inject(0){|total, post_vote | total += post_vote.vote }
-  end
-
-  def comment_votes(comment)
-    comment.comments_votes.inject(0){|total, comment_vote | total += comment_vote.vote }  
-  end
 end

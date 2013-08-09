@@ -71,6 +71,11 @@ post '/login' do
   end
 end
 
+get '/logout' do
+  session.delete(:user_id) if session[:user_id]
+  redirect '/'
+end
+
 get '/posts/:post_id' do |post_id|
   @post = Post.find(post_id)
   @errors = session.delete(:errors) if session[:errors]

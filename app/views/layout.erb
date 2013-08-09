@@ -21,16 +21,24 @@
   <img id="header_image" src="/img/hackernews.gif">
   <a href="/"><h3>Hacker Brews</h3></a>
   <nav>
-    <dl>
-      <dd><a href='#'>new</a></dd>
-      <dd><a href='#'>comments</a></dd>
-      <dd><a href='#'>ask</a></dd>
-      <dd><a href='#'>jobs</a></dd>
-      <dd><a href='/submit'>submit</a></dd>
-    </dl>
+    <ul>
+      <li><a href='#'>new</a></li>
+      <li><a href='#'>comments</a></li>
+      <li><a href='#'>ask</a></li>
+      <li><a href='#'>jobs</a></li>
+      <li><a href='/submit'>submit</a></li>
+    </ul>
   </nav>
-  <div id="login"><a href="/users/new">signup</a></div>
-  <div id="login"><a href="/login">login</a></div>
+  <ul class="float-right">
+    <% if current_user %>
+      <li><a href= <%= "/users/#{current_user.id}" %>> <%=username_with_points %> </a></li>
+      <li>|</li>
+      <li><a href="/logout">logout</a></li>  
+    <% else %>
+      <li><a href="/users/new">signup</a></li>
+      <li><a href="/login">login</a></li>
+    <% end %>
+  </ul>
 </header>
 <body>
   <div class="container">

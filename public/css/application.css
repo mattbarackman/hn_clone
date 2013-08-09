@@ -103,13 +103,6 @@ dl {
   margin-right: 10px;
 }
 
-
-dd {
-  display: inline-block;
-  margin-left: 0;
-  padding-left: 10px;  
-}
-
 header a {
   text-decoration: none;
   color: black;
@@ -146,14 +139,17 @@ nav {
   padding-bottom: 10px;
 }
 
-.submit {
- margin-top: 10px; 
+.float-right {
+  float: right;
 }
 
-.signup {
- margin-top: 10px;
+ul li {
+  display: inline-block;
+  margin-left: 10px;
 }
 
-.login {
- margin-top: 10px;
+ul {
+  display: inline-block;
+  margin: 0px;
+  padding-left: 0px;
 }
