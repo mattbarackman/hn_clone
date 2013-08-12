@@ -20,6 +20,7 @@ gem 'shotgun'
 gem 'faker'
 
 gem 'debugger'
+gem 'json'
 
 group :test do
   gem 'faker'

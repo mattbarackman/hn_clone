@@ -82,6 +82,16 @@ get '/posts/:post_id' do |post_id|
   erb :post
 end
 
+post '/posts/:post_id/votes' do |post_id|
+  content_type :json
+  if current_user
+    PostsVote.create(post_id: post_id, user_id: current_user.id, vote: params[:value])
+    {value: params[:value].to_i}.to_json
+  else
+    {redirect: "/login"}.to_json
+  end
+end
+
 post '/posts/:post_id/comments/new' do |post_id|
   @user = User.find(session[:user_id])
   if @user

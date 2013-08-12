@@ -1,7 +1,21 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('.up_arrow').click(function(e){
+    e.preventDefault();
+    var postId = $(this).closest(".post")[0].id;
+    var that = this;
+    $.ajax({
+      type: 'POST',
+      url: '/posts/' + postId + '/votes',
+      data: {value : 1},
+    }).done(function(response){
+      debugger;
+      if (response.redirect){
+        window.location = response.redirect
+      } else {
+        $(that).hide();
+        pointsDisplay = $(that).closest(".post").find(".points")[0];
+        pointsDisplay.innerHTML = parseInt(pointsDisplay.innerHTML) + response.value;
+      }
+    });
+  });
 });

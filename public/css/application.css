@@ -1,8 +1,6 @@
 body {
   font-size: 80%;
-/*  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-*/
+  color: gray;
 }
 .container {
   box-sizing: border-box;
@@ -10,7 +8,7 @@ body {
   margin: 0px auto 20px auto;
   width: 85%;
   padding: 10px 20px 20px 20px;
-  background-color: #ddd;
+  background-color: #F5F5EB;
   min-height: 1000px;
 
 }
@@ -23,13 +21,18 @@ th {
   color: red;
 }
 
+h3 {
+  color: black;
+}
+
 header {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   background-color: #ff6600;
   padding: 2px;
   width: 85%;
-  margin: 20px auto 0px auto;
+  margin: 20px auto 0 auto;
+  color: black;
 }
 
 h3 {
@@ -43,7 +46,6 @@ h3 {
 }
 
 .post span {
-  padding-left: 15px;
   color: gray;
 }
 
@@ -54,7 +56,7 @@ h3 {
 
 .post a {
   text-decoration: none;
-  color: black;
+  color: gray;
   line-height: 24px;
 }
 
@@ -62,20 +64,32 @@ h3 {
   color: gray;
 }
 
+.title_link a {
+  color: black;
+}
 
-.comment h3 {
-  display: block;
+.title_link a:visited {
+  color: gray;
+}
+
+.comment {
+  margin-bottom: 20px;
+  line-height: 1.2em;
+}
+
+.comment .comment-header {
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.comment .comment-body {
+  color: black;
 }
 
 .comment p {
   padding-left: 15px;
-  color: gray;
-  display: inline-block;
-}
-
-.comment {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .comment a {
@@ -119,7 +133,7 @@ nav {
 } 
 
 #post_info_section {
-  padding: 30px 0;
+  padding: 10px 0;
 }
 
 #comment_input_section {
@@ -133,14 +147,9 @@ nav {
   margin-bottom: 5px;
 }
 
-.comment {
-  border-top: 1px solid gray;
-  padding-top: 30px;
-  padding-bottom: 10px;
-}
-
 .float-right {
   float: right;
+  margin-right: 10px;
 }
 
 ul li {
@@ -152,4 +161,8 @@ ul {
   display: inline-block;
   margin: 0px;
   padding-left: 0px;
+}
+
+.up_arrow {
+  font-size: 0.6em;
 }

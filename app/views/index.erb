@@ -1,6 +1,13 @@
 <% @posts.each_with_index do |post, index| %>
-  <div class="post">
-    <h3><%= index+1 %>. <a href="<%= post.url %>"><%= post.title %></a></h3>
-    <span> <%= "#{post_votes(post.user)} points by #{post.user.username} #{created_ago(post.created_at)} | "%><a href="/posts/<%= post.id %>"><%= post.comments.count %> comments</a></span> 
+  <div class="post" id="<%=post.id%>">
+    <h3 class= "title_link">
+      <%= index+1 %>.
+      <% unless current_user && current_user.voted_on?(post) %> 
+        <a href="#" class="up_arrow">&#x25B2</a>
+      <% end %>
+      <a href="<%= post.url %>"><%= post.title %></a></h3>
+    <span> 
+      <span class="points"><%= "#{post.karma}" %></span><%= " points by #{post.user.username} #{created_ago(post.created_at)} | "%><a href="/posts/<%= post.id %>"><%= post.comments.count %> comments</a>
+    </span> 
    </div>
 <% end %>

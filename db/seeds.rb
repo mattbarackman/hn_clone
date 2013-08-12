@@ -10,7 +10,7 @@ end
   user = User.all.sample
   
   post = Post.create(title: Faker::Company.bs,
-                     body: Faker::Lorem.sentences(5),
+                     body: Faker::Lorem.paragraph(5),
                      url: "http://mattbarackman.com")
   user.posts << post
   user.save
@@ -30,7 +30,7 @@ end
 
 40.times do
   post = Post.all.sample
-  post.comments << Comment.create(body: Faker::Lorem.sentences(5), user_id: User.all.sample.id)
+  post.comments << Comment.create(body: Faker::Lorem.paragraph(5), user_id: User.all.sample.id)
   post.save
 end
 

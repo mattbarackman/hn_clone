@@ -5,4 +5,9 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :url
   validates_presence_of :title
+
+  def karma
+    posts_votes.inject(0){|sum, vote| sum += vote.vote}
+  end
+
 end
